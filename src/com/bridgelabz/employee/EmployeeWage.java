@@ -10,22 +10,24 @@ public class EmployeeWage {
         int hrs = 0;
         int empWage = 0;
         double check = Math.floor(Math.random() * 10 ) % 2;
-        if (check == fullTime)
-        {
-            System.out.println("Employee is Full time ");
-            hrs = 8;
-            empWage = perHrsWage * hrs;
-            System.out.println("Employe wage salary is " + empWage);
-        } else if (check == partTime) {
-            System.out.println("Employe is part time");
-            hrs =4;
-            empWage =perHrsWage * hrs;
-            System.out.println(empWage);
-        } else {
-            System.out.println("Employee is absent ");
-            hrs = 0;
-            empWage = perHrsWage * hrs;
-            System.out.println(empWage);
+        switch (check){
+            case fullTime:
+                System.out.println("Employee is Full time ");
+                hrs = 8;
+                empWage = perHrsWage * hrs;
+                System.out.println("Employe wage salary is " + empWage);
+                break;
+            case partTime:
+                System.out.println("Employe is part time");
+                hrs =4;
+                empWage =perHrsWage * hrs;
+                System.out.println(empWage);
+                break;
+            default:
+                System.out.println("Employee is absent ");
+                hrs = 0;
+                empWage = perHrsWage * hrs;
+                System.out.println(empWage);
         }
     }
 }
